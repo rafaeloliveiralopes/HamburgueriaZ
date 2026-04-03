@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HamburgueriaZ</string>
+    <string name="order_title">Faça seu pedido!</string>
+    <string name="order_subtitle">Monte seu hambúrguer com os adicionais que preferir.</string>
+    <string name="hint_client_name">Nome</string>
+    <string name="extras_title">Adicionais</string>
+    <string name="extra_bacon">Bacon</string>
+    <string name="extra_cheese">Queijo</string>
+    <string name="extra_onion_rings">Onion Rings</string>
+    <string name="quantity_title">Quantidade</string>
+    <string name="minus_sign">-</string>
+    <string name="plus_sign">+</string>
+    <string name="default_quantity">0</string>
+    <string name="order_summary_title">Resumo do pedido</string>
+    <string name="default_summary">Seu resumo aparecerá aqui na próxima etapa.</string>
+    <string name="default_total_price">Total: R$ 0,00</string>
+    <string name="place_order_button">Fazer pedido</string>
+</resources>
