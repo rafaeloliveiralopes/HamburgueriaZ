@@ -65,6 +65,14 @@ O projeto simula o fluxo de pedido de uma hamburgueria, permitindo selecionar ad
 | **Validações básicas** | Impede envio sem nome do cliente ou sem quantidade selecionada. |
 
 ---
+### Telas
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/50f69c41-849d-4c06-b6dc-d97e3a6d3a97" width="250"/>
+  <img src="https://github.com/user-attachments/assets/4515ae35-ee83-4f53-a83e-59be103c471a" width="250"/>
+  <img src="https://github.com/user-attachments/assets/ae3d0922-6f55-42cc-b840-db27c94ef680" width="250"/>
+</p>
+---
 
 ## Estrutura Implementada
 
