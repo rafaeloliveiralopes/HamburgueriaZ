@@ -21,6 +21,16 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/ivBannerLogo"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            android:background="#F7A523"
+            android:contentDescription="@string/banner_logo_description"
+            android:scaleType="fitCenter"
+            android:src="@drawable/burger_banner" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,11 +39,11 @@
             android:paddingTop="24dp">
 
             <TextView
+                style="@style/EstiloTexto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/order_title"
                 android:textColor="@color/text_primary"
-                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -92,12 +102,12 @@
                 android:textColor="@color/text_primary" />
 
             <TextView
+                style="@style/EstiloTexto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="@string/quantity_title"
                 android:textColor="@color/text_primary"
-                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -137,12 +147,12 @@
             </LinearLayout>
 
             <TextView
+                style="@style/EstiloTexto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:text="@string/order_summary_title"
                 android:textColor="@color/text_primary"
-                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -156,12 +166,12 @@
 
             <TextView
                 android:id="@+id/tvTotalPrice"
+                style="@style/EstiloTexto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:text="@string/default_total_price"
                 android:textColor="@color/burger_primary"
-                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <Button
