@@ -189,11 +189,12 @@
 
             <Button
                 android:id="@+id/btnPlaceOrder"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="28dp"
                 android:backgroundTint="@color/burger_primary"
-                android:maxWidth="360dp"
+                android:minWidth="220dp"
                 android:paddingVertical="14dp"
                 android:text="@string/place_order_button"
                 android:textAllCaps="true"
