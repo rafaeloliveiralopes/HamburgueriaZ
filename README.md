@@ -19,6 +19,7 @@ O projeto simula o fluxo de pedido de uma hamburgueria, permitindo selecionar ad
 - [Tecnologias e Ferramentas](#tecnologias-e-ferramentas)
 - [Objetivos do Projeto](#objetivos-do-projeto)
 - [Principais Funcionalidades](#principais-funcionalidades)
+- [Telas Mobile](#telas-mobile)
 - [Estrutura Implementada](#estrutura-implementada)
 - [Como Executar](#como-executar)
 - [Testes e Validação](#testes-e-validação)
@@ -65,13 +66,16 @@ O projeto simula o fluxo de pedido de uma hamburgueria, permitindo selecionar ad
 | **Validações básicas** | Impede envio sem nome do cliente ou sem quantidade selecionada. |
 
 ---
-### Telas
+### Telas Mobile
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/50f69c41-849d-4c06-b6dc-d97e3a6d3a97" width="250"/>
-  <img src="https://github.com/user-attachments/assets/4515ae35-ee83-4f53-a83e-59be103c471a" width="250"/>
-  <img src="https://github.com/user-attachments/assets/ae3d0922-6f55-42cc-b840-db27c94ef680" width="250"/>
+  <img src="https://github.com/user-attachments/assets/50f69c41-849d-4c06-b6dc-d97e3a6d3a97" width="250" alt="Tela 1" />
+  
+  <img src="https://github.com/user-attachments/assets/4515ae35-ee83-4f53-a83e-59be103c471a" width="250" alt="Tela 2" />
+  
+  <img src="https://github.com/user-attachments/assets/c5197365-6711-4b58-920c-8a5262a986f6" alt="Tela 3" width="250"/>
 </p>
+
 ---
 
 ## Estrutura Implementada
