@@ -1,5 +1,8 @@
 # HamburgueriaZ
-<img src="./img.png" alt="Banner do aplicativo HamburgueriaZ" width="100%" />
+
+<img width="1536" height="1024" alt="Vibrant burger banner design" src="https://github.com/user-attachments/assets/7d7d249e-7590-4b2c-a87c-34bbfcdcb99a" alt="Banner do aplicativo HamburgueriaZ"/>
+
+
 
 ---
 
