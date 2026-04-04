@@ -45,17 +45,8 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun bindListeners() {
-        btnDecrease.setOnClickListener {
-            if (quantity > 0) {
-                quantity--
-                renderOrder()
-            }
-        }
-
-        btnIncrease.setOnClickListener {
-            quantity++
-            renderOrder()
-        }
+        btnDecrease.setOnClickListener { subtrair() }
+        btnIncrease.setOnClickListener { somar() }
 
         val optionChangeListener = {
             renderOrder()
@@ -89,6 +80,20 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    private fun somar() {
+        quantity++
+        renderOrder()
+    }
+
+    private fun subtrair() {
+        if (quantity == 0) {
+            return
+        }
+
+        quantity--
+        renderOrder()
     }
 
     private fun renderOrder() {
