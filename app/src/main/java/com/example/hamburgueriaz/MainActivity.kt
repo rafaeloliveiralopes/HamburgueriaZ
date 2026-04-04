@@ -1,11 +1,14 @@
 package com.example.hamburgueriaz
 
+import android.content.Intent
 import android.os.Bundle
+import android.net.Uri
 import android.graphics.Paint
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 class MainActivity : ComponentActivity() {
@@ -88,7 +91,37 @@ class MainActivity : ComponentActivity() {
             else -> {
                 tvSummary.text = order.summary
                 tvTotalPrice.text = OrderCalculator.formatCurrency(order.totalPrice)
+                abrirEmail(order)
             }
+        }
+    }
+
+    private fun abrirEmail(order: OrderDetails) {
+        val emailSubject = getString(R.string.email_subject_template, order.clientName)
+
+        val sendToIntent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+            putExtra(Intent.EXTRA_SUBJECT, emailSubject)
+            putExtra(Intent.EXTRA_TEXT, order.summary)
+        }
+
+        if (sendToIntent.resolveActivity(packageManager) != null) {
+            startActivity(sendToIntent)
+            return
+        }
+
+        val fallbackIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "message/rfc822"
+            putExtra(Intent.EXTRA_SUBJECT, emailSubject)
+            putExtra(Intent.EXTRA_TEXT, order.summary)
+        }
+
+        if (fallbackIntent.resolveActivity(packageManager) != null) {
+            startActivity(
+                Intent.createChooser(fallbackIntent, getString(R.string.email_chooser_title))
+            )
+        } else {
+            Toast.makeText(this, R.string.error_missing_email_app, Toast.LENGTH_SHORT).show()
         }
     }
 

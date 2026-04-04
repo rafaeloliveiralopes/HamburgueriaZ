@@ -17,5 +17,8 @@
     <string name="place_order_button">Enviar pedido</string>
     <string name="error_missing_name">Informe o nome do cliente.</string>
     <string name="error_missing_quantity">Selecione pelo menos um hambúrguer.</string>
+    <string name="email_subject_template">Pedido de %1$s</string>
+    <string name="email_chooser_title">Enviar pedido por e-mail</string>
+    <string name="error_missing_email_app">Nenhum aplicativo de e-mail foi encontrado.</string>
     <string name="banner_logo_description">Logo da HamburgueriaZ em destaque</string>
 </resources>
