@@ -12,10 +12,10 @@ data class OrderDetails(
 )
 
 object OrderCalculator {
-    private const val BURGER_PRICE = 18.0
-    private const val BACON_PRICE = 2.5
+    private const val BURGER_PRICE = 20.0
+    private const val BACON_PRICE = 2.0
     private const val CHEESE_PRICE = 2.0
-    private const val ONION_RINGS_PRICE = 3.5
+    private const val ONION_RINGS_PRICE = 3.0
 
     fun calculateOrder(
         clientName: String,
@@ -37,10 +37,17 @@ object OrderCalculator {
 
         val totalPrice = quantity * unitPrice
 
-        val summary = when {
-            quantity == 0 -> "Nenhum item selecionado."
-            extras.isEmpty() -> "$quantity hambúrguer(es) tradicional(is)"
-            else -> "$quantity hambúrguer(es) com ${extras.joinToString(", ")}"
+        val summary = if (quantity == 0) {
+            "Nenhum item selecionado."
+        } else {
+            buildString {
+                appendLine(clientName)
+                appendLine("Tem Bacon? ${if (withBacon) "Sim" else "Não"}")
+                appendLine("Tem Queijo? ${if (withCheese) "Sim" else "Não"}")
+                appendLine("Tem Onion Rings? ${if (withOnionRings) "Sim" else "Não"}")
+                appendLine("Quantidade: $quantity")
+                append("Preço final: ${formatCurrency(totalPrice)}")
+            }
         }
 
         return OrderDetails(

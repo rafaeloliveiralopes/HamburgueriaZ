@@ -1,11 +1,11 @@
 package com.example.hamburgueriaz
 
 import android.os.Bundle
+import android.graphics.Paint
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 class MainActivity : ComponentActivity() {
@@ -42,6 +42,7 @@ class MainActivity : ComponentActivity() {
         btnDecrease = findViewById(R.id.btnDecrease)
         btnIncrease = findViewById(R.id.btnIncrease)
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder)
+        btnPlaceOrder.paintFlags = btnPlaceOrder.paintFlags and Paint.UNDERLINE_TEXT_FLAG.inv()
     }
 
     private fun bindListeners() {
@@ -55,31 +56,7 @@ class MainActivity : ComponentActivity() {
         cbBacon.setOnCheckedChangeListener { _, _ -> optionChangeListener() }
         cbCheese.setOnCheckedChangeListener { _, _ -> optionChangeListener() }
         cbOnionRings.setOnCheckedChangeListener { _, _ -> optionChangeListener() }
-
-        btnPlaceOrder.setOnClickListener {
-            val order = currentOrder()
-
-            when {
-                order.clientName.isBlank() -> {
-                    etClientName.error = getString(R.string.error_missing_name)
-                    etClientName.requestFocus()
-                }
-                order.quantity == 0 -> {
-                    Toast.makeText(this, R.string.error_missing_quantity, Toast.LENGTH_SHORT).show()
-                }
-                else -> {
-                    Toast.makeText(
-                        this,
-                        getString(
-                            R.string.order_success_message,
-                            order.clientName,
-                            OrderCalculator.formatCurrency(order.totalPrice)
-                        ),
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            }
-        }
+        btnPlaceOrder.setOnClickListener { enviarPedido() }
     }
 
     private fun somar() {
@@ -96,10 +73,34 @@ class MainActivity : ComponentActivity() {
         renderOrder()
     }
 
+    private fun enviarPedido() {
+        val order = currentOrder()
+
+        when {
+            order.clientName.isBlank() -> {
+                etClientName.error = getString(R.string.error_missing_name)
+                etClientName.requestFocus()
+            }
+            order.quantity == 0 -> {
+                tvSummary.text = getString(R.string.error_missing_quantity)
+                tvTotalPrice.text = getString(R.string.default_total_price)
+            }
+            else -> {
+                tvSummary.text = order.summary
+                tvTotalPrice.text = OrderCalculator.formatCurrency(order.totalPrice)
+            }
+        }
+    }
+
     private fun renderOrder() {
         val order = currentOrder()
-        tvQuantity.text = order.quantity.toString()
-        tvSummary.text = order.summary
+
+        tvQuantity.text = quantity.toString()
+        tvSummary.text = if (order.quantity == 0) {
+            getString(R.string.default_summary)
+        } else {
+            order.summary
+        }
         tvTotalPrice.text = OrderCalculator.formatCurrency(order.totalPrice)
     }
 

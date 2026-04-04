@@ -4,19 +4,18 @@
     <string name="order_subtitle">Monte seu hambúrguer com os adicionais que preferir.</string>
     <string name="hint_client_name">Nome</string>
     <string name="extras_title">Adicionais</string>
-    <string name="extra_bacon">Bacon</string>
-    <string name="extra_cheese">Queijo</string>
-    <string name="extra_onion_rings">Onion Rings</string>
+    <string name="extra_bacon">Bacon (+R$ 2)</string>
+    <string name="extra_cheese">Queijo (+R$ 2)</string>
+    <string name="extra_onion_rings">Onion Rings (+R$ 3)</string>
     <string name="quantity_title">Quantidade</string>
     <string name="minus_sign">-</string>
     <string name="plus_sign">+</string>
     <string name="default_quantity">0</string>
     <string name="order_summary_title">Resumo do pedido</string>
-    <string name="default_summary">Nenhum item selecionado.</string>
+    <string name="default_summary">Clique em enviar pedido para gerar o resumo.</string>
     <string name="default_total_price">R$ 0</string>
-    <string name="place_order_button">Fazer pedido</string>
+    <string name="place_order_button">Enviar pedido</string>
     <string name="error_missing_name">Informe o nome do cliente.</string>
     <string name="error_missing_quantity">Selecione pelo menos um hambúrguer.</string>
-    <string name="order_success_message">Pedido de %1$s enviado. Total: %2$s.</string>
     <string name="banner_logo_description">Logo da HamburgueriaZ em destaque</string>
 </resources>

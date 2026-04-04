@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/surface_background">
@@ -27,13 +28,17 @@
             android:layout_height="120dp"
             android:adjustViewBounds="true"
             android:background="#F7A523"
-            android:contentDescription="@string/banner_logo_description"
+            android:contentDescription="@null"
+            android:importantForAccessibility="no"
             android:scaleType="fitCenter"
-            android:src="@drawable/burger_banner" />
+            android:src="@drawable/burger_banner"
+            tools:ignore="ImageContrastCheck" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:maxWidth="360dp"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
             android:paddingTop="24dp">
@@ -59,10 +64,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:autofillHints="name"
                 android:backgroundTint="@color/burger_primary"
                 android:ems="10"
                 android:hint="@string/hint_client_name"
                 android:inputType="textPersonName"
+                android:maxWidth="360dp"
                 android:minHeight="48dp"
                 android:textColor="@color/text_primary"
                 android:textColorHint="@color/text_secondary" />
@@ -82,6 +89,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:buttonTint="@color/burger_primary"
+                android:minHeight="48dp"
+                android:paddingVertical="8dp"
                 android:text="@string/extra_bacon"
                 android:textColor="@color/text_primary" />
 
@@ -90,6 +99,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/burger_primary"
+                android:minHeight="48dp"
+                android:paddingVertical="8dp"
                 android:text="@string/extra_cheese"
                 android:textColor="@color/text_primary" />
 
@@ -98,6 +109,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/burger_primary"
+                android:minHeight="48dp"
+                android:paddingVertical="8dp"
                 android:text="@string/extra_onion_rings"
                 android:textColor="@color/text_primary" />
 
@@ -180,6 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:backgroundTint="@color/burger_primary"
+                android:maxWidth="360dp"
                 android:paddingVertical="14dp"
                 android:text="@string/place_order_button"
                 android:textAllCaps="true"
